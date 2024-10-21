@@ -3,6 +3,7 @@ import {useState} from "react";
 import CurrencyDropdown from "./dropdown";
 import {HiArrowsRightLeft} from "react-icons/hi2";
 
+
 const CurrencyConverter = () => {
   const [currencies, setCurrencies] = useState([]);
   const [amount, setAmount] = useState(1);
@@ -25,7 +26,7 @@ const CurrencyConverter = () => {
       console.error("Error Fetching", error);
     }
   };
-
+  
   useEffect(() => {
     fetchCurrencies();
   }, []);
@@ -69,7 +70,10 @@ const CurrencyConverter = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto my-10 p-5 bg-white rounded-lg shadow-md">
+    <div className="h-screen bg-[url('https://images.pexels.com/photos/534229/pexels-photo-534229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]  bg-cover bg-center flex items-center justify-center">
+      
+    
+      <div className="max-w-lg w-full mx-auto my-10 p-5 bg-white rounded-lg shadow-md">
       <h2 className="mb-5 text-2xl font-semibold text-gray-700">
         Currency Converter
       </h2>
@@ -132,6 +136,7 @@ const CurrencyConverter = () => {
           Converted Amount: {convertedAmount}
         </div>
       )}
+    </div>
     </div>
   );
 };
